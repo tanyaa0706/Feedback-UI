@@ -12,6 +12,4 @@ export class AddTrainingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  gahhshkdhjsagkgdgjagdjgma
-
 }
