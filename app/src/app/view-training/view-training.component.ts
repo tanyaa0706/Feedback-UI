@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-training.component.css']
 })
 export class ViewTrainingComponent implements OnInit {
-  displayedColumns = ['id', 'trainingName', 'facultyName', 'courseName', 'startDate', 'endDate'];
+  displayedColumns = ['id', 'trainingName', 'facultyName', 'courseName', 'startDate', 'endDate','actions'];
   dataSource = ELEMENT_DATA;
 
   constructor(private router: Router) { }
