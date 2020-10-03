@@ -10,7 +10,6 @@ import { MaterialModule } from  './material/material.module';
 
 import { AddTrainingComponent } from './add-training/add-training.component';
 import { EditTrainingComponent } from './edit-training/edit-training.component';
-import { DeleteTrainingComponent } from './delete-training/delete-training.component';
 import { ViewTrainingComponent } from './view-training/view-training.component';
 import { CoOrdinatorComponent } from './co-ordinator/co-ordinator.component';
 
@@ -19,7 +18,6 @@ import { CoOrdinatorComponent } from './co-ordinator/co-ordinator.component';
     AppComponent,
     AddTrainingComponent,
     EditTrainingComponent,
-    DeleteTrainingComponent,
     ViewTrainingComponent,
     CoOrdinatorComponent
   ],

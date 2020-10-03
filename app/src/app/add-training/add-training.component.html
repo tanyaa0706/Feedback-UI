@@ -15,27 +15,27 @@
                     </mat-error>
                 </mat-form-field>
 
-                <!-- <mat-form-field class="full-width">
-                    <mat-select placeholder="Faculty Name" formControlName="facultyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.facultyName.errors }" required>
-                        <mat-option *ngFor="let faculty of faculties" [value]="faculty.name">
-                            {{faculty.name}}
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="Faculty Name" formControlName="faculty" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.faculty.errors }" required>
+                        <mat-option *ngFor="let faculty of faculties" [value]="faculty">
+                            {{faculty.facultyName}}
                         </mat-option>
                     </mat-select>
                     <mat-error *ngIf="submitted && f.facultyName.errors">
                         <mat-error *ngIf="f.facultyName.errors.required">Please choose a faculty</mat-error>
                     </mat-error>
-                </mat-form-field> -->
+                </mat-form-field>
 
-                <!-- <mat-form-field class="full-width">
-                    <mat-select placeholder="Course Name" formControlName="courseName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.courseName.errors }" required>
-                        <mat-option *ngFor="let course of courses" [value]="course.name">
-                            {{course.name}}
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="Course Name" formControlName="course" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.course.errors }" required>
+                        <mat-option *ngFor="let course of courses" [value]="course">
+                            {{course.courseName}}
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="submitted && f.courseName.errors">
-                        <mat-error *ngIf="f.courseName.errors.required">Please choose a Course</mat-error>
+                    <mat-error *ngIf="submitted && f.course.errors">
+                        <mat-error *ngIf="f.course.errors.required">Please choose a Course</mat-error>
                     </mat-error>
-                </mat-form-field> -->
+                </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Start Date</mat-label>
@@ -58,15 +58,15 @@
                 </mat-form-field>
 
                 <mat-card-actions>
-                    <button mat-raised-button color="primary">Edit Training</button><br><br>
+                    <button mat-raised-button color="primary">Add Training</button><br><br>
                     <button mat-raised-button type="reset" (click)="onReset()" color="primary">Cancel</button>
                 </mat-card-actions>   
-                <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
-                    Profile Edited Successfully!!<br/>
+                <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
+                    Added Training Successfully!!<br/>
                 </div>
-                <div class="alert alert-warning" *ngIf="f.submitted && isUpdateFailed">
-                    Profile Edit Failed!<br/>{{ errorMessage }}
-                </div> -->
+                <div class="alert alert-warning" *ngIf="f.submitted && isAddFailed">
+                    Could not add Training!!<br/>{{ errorMessage }}
+                </div>
             </form>
         </mat-card-content>
     </mat-card>
