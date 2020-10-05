@@ -10,26 +10,32 @@
 
                 <mat-form-field class="full-width">
                     <mat-label>Training Name</mat-label>
-                    <input matInput type="text" formControlName="trainingName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.trainingName.errors }" required/>
+                    <input matInput type="text" formControlName="trainingName" [value]="model.trainingName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.trainingName.errors }" required/>
                     <mat-error *ngIf="submitted && f.trainingName.errors">
                         <mat-error *ngIf="f.trainingName.errors.required">Training Name is required</mat-error>
                     </mat-error>
                 </mat-form-field>
 
-                <!-- <mat-form-field class="full-width">
-                    <mat-select placeholder="Faculty Name" formControlName="facultyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.facultyName.errors }" required>
-                        <mat-option *ngFor="let faculty of faculties" [value]="faculty.name">
-                            {{faculty.name}}
+                <mat-form-field class="full-width">
+                    <mat-label>Faculty Name</mat-label>
+                    <!-- <input matInput type="text" formControlName="faculty" [value]="fac.facultyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.faculty.errors }" required/>
+                    <mat-error *ngIf="submitted && f.faculty.errors">
+                        <mat-error *ngIf="f.faculty.errors.required">Training Name is required</mat-error>
+                    </mat-error> -->
+                    <mat-select placeholder="Faculty Name"  formControlName="faculty" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.faculty.errors }" required> 
+                        <mat-option disabled selected value>{{fac.facultyName}}-{{fac.facultySkill}}</mat-option>      
+                        <mat-option *ngFor="let faculty of faculties" [value]="faculty">
+                            {{faculty.facultyName}}-{{faculty.facultySkill}}
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="submitted && f.facultyName.errors">
-                        <mat-error *ngIf="f.facultyName.errors.required">Please choose a faculty</mat-error>
+                    <mat-error *ngIf="submitted && f.faculty.errors">
+                        <mat-error *ngIf="f.faculty.errors.required">Please choose a faculty</mat-error>
                     </mat-error>
-                </mat-form-field> -->
+                </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Start Date</mat-label>
-                    <input matInput [matDatepicker]="sD" formControlName="startDate" required/>
+                    <input matInput [matDatepicker]="sD"  [value]="model.startDate" formControlName="startDate" required/>
                     <mat-datepicker-toggle matSuffix [for]="sD"></mat-datepicker-toggle>
                     <mat-datepicker #sD></mat-datepicker>
                     <mat-error *ngIf="submitted && f.startDate.errors">
@@ -39,7 +45,7 @@
 
                 <mat-form-field class="full-width">
                     <mat-label>End Date</mat-label>
-                    <input matInput [matDatepicker]="eD" formControlName="endDate" required/>
+                    <input matInput [matDatepicker]="eD" [value]="model.endDate" formControlName="endDate" required/>
                     <mat-datepicker-toggle matSuffix [for]="eD"></mat-datepicker-toggle>
                     <mat-datepicker #eD></mat-datepicker>
                     <mat-error *ngIf="submitted && f.endDate.errors">
@@ -52,13 +58,6 @@
                     <button mat-raised-button type="reset" (click)="onReset()" color="primary">Cancel</button>
                 </mat-card-actions>
 
-                
-                <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
-                    Training Edited Successfully!!
-                </div>
-                <div class="alert alert-warning" *ngIf="f.submitted && isUpdateFailed">
-                    Training Edit Failed!{{ errorMessage }}
-                </div> -->
             </form>
         </mat-card-content>
     </mat-card>

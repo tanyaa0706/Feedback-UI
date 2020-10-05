@@ -13,14 +13,12 @@ import { TrainingService } from '../service/training.service';
   styleUrls: ['./add-training.component.css']
 })
 export class AddTrainingComponent implements OnInit {
-  formObj: any;
   addForm: FormGroup;
   model: Training;
   submitted = false;
   errorMessage: any;
   isSuccessful: boolean;
   isAddFailed: boolean;
-  isLoading: boolean;
   faculties: Faculty[];
   courses: Course[];
 
@@ -72,10 +70,6 @@ export class AddTrainingComponent implements OnInit {
         this.model = data;
         this.isSuccessful = true;
         this.router.navigateByUrl('/viewtrainings');
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isAddFailed = true;
       }
     );
   }

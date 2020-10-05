@@ -8,7 +8,8 @@ import { ViewTrainingComponent } from './view-training/view-training.component';
 const routes: Routes = [
   {path:'addtraining',component:AddTrainingComponent},
   {path:'viewtrainings',component:ViewTrainingComponent},
-  {path:'edittraining',component:EditTrainingComponent}
+  {path:'edittraining/:id',component:EditTrainingComponent},
+  { path: '', redirectTo: 'viewtrainings', pathMatch: 'full' }
 ];
 
 @NgModule({

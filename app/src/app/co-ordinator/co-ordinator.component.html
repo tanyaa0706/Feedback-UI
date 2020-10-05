@@ -15,22 +15,11 @@
     
       <button mat-button [matMenuTriggerFor]="menu3">Username</button>
       <mat-menu #menu3="matMenu">
-        <button mat-menu-item (click)="logout()">Logout</button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Logout
+        </button>
       </mat-menu>
-  
-      <!-- <mat-nav-list *ngIf="!isLoggedIn">
-        <a mat-button routerLink="/register">Register</a>
-        <a mat-button routerLink="/login">Login</a>
-      </mat-nav-list>
-      <mat-nav-list *ngIf="isLoggedIn">
-        <button mat-button [matMenuTriggerFor]="menu">{{username}}</button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/profile">View Profile</button>
-            <button mat-menu-item routerLink="/editprofile">Edit Profile</button>
-            <button mat-menu-item routerLink="/resetpass">Reset Password</button>
-          </mat-menu> -->
-        
-      <!-- </mat-nav-list> -->
       
     </mat-toolbar-row>
   </mat-toolbar>

@@ -21,8 +21,8 @@
                             {{faculty.facultyName}}
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="submitted && f.facultyName.errors">
-                        <mat-error *ngIf="f.facultyName.errors.required">Please choose a faculty</mat-error>
+                    <mat-error *ngIf="submitted && f.faculty.errors">
+                        <mat-error *ngIf="f.faculty.errors.required">Please choose a faculty</mat-error>
                     </mat-error>
                 </mat-form-field>
 
@@ -61,12 +61,6 @@
                     <button mat-raised-button color="primary">Add Training</button><br><br>
                     <button mat-raised-button type="reset" (click)="onReset()" color="primary">Cancel</button>
                 </mat-card-actions>   
-                <div class="alert alert-warning" *ngIf="f.submitted && isSuccessful">
-                    Added Training Successfully!!<br/>
-                </div>
-                <div class="alert alert-warning" *ngIf="f.submitted && isAddFailed">
-                    Could not add Training!!<br/>{{ errorMessage }}
-                </div>
             </form>
         </mat-card-content>
     </mat-card>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Training } from '../model/training';
 import { Course } from '../model/course';
 
@@ -36,8 +36,12 @@ export class TrainingService {
   },httpOptions);
 }
 
- deleteTraining(training):Observable<any> {
-  return this.http.delete(AUTH_API + `/${training.trainingId}`, { responseType: 'json' });
+ deleteTraining(trainingId):Observable<any> {
+  return this.http.delete(AUTH_API + `/${trainingId}`, { responseType: 'json' });
+}
+
+getTraining(trainingId):Observable<any> {
+  return this.http.get(AUTH_API + `/${trainingId}`, { responseType: 'json' });
 }
 
 getTrainings(): Observable<any> {

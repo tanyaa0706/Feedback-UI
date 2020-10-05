@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +12,7 @@ import { AddTrainingComponent } from './add-training/add-training.component';
 import { EditTrainingComponent } from './edit-training/edit-training.component';
 import { ViewTrainingComponent } from './view-training/view-training.component';
 import { CoOrdinatorComponent } from './co-ordinator/co-ordinator.component';
+import { HttpErrorInterceptor } from './http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,19 @@ import { CoOrdinatorComponent } from './co-ordinator/co-ordinator.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [
+    {
+
+      provide: HTTP_INTERCEPTORS,
+ 
+      useClass: HttpErrorInterceptor,
+ 
+      multi: true
+ 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
